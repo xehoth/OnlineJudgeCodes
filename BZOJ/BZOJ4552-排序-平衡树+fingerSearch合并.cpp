@@ -2,7 +2,7 @@
  * Copyright (c) 2017, xehoth
  * All rights reserved.
  * 「BZOJ 4552」排序 21-09-2017
- * 平衡树 + 线段树分裂合并
+ * 平衡树 + fingerSearch
  * @author xehoth
  */
 #include <bits/stdc++.h>
@@ -99,65 +99,80 @@ namespace {
 using IO::io;
 
 const int MAXN = 100000;
-const int MAX_LOG = 20;
+
+typedef unsigned int uint;
+inline uint nextUint() {
+    static uint seed = 495;
+    seed ^= seed << 13;
+    seed ^= seed >> 17;
+    seed ^= seed << 5;
+    return seed;
+}
 
 struct Node {
     Node *lc, *rc;
-    int size;
+    int size, key;
+    uint rank;
 
     inline void *operator new(size_t);
 
-    inline void operator delete(void *);
-
-    inline void maintain();
+    inline void maintain() { size = lc->size + rc->size + 1; }
 
     Node();
-} pool[MAXN * MAX_LOG + 1], *null = pool, *cur = pool + 1,
-                            *bin[MAXN * MAX_LOG + 1];
-int binTop;
+    Node(int);
+} pool[MAXN + 1], *null = pool, *cur = pool + 1;
 
-inline void *Node::operator new(size_t) {
-    return binTop ? bin[--binTop] : cur++;
-}
+inline void *Node::operator new(size_t) { return cur++; }
 
-inline void Node::operator delete(void *p) { bin[binTop++] = (Node *)p; }
+Node::Node() : lc(null), rc(null), size(0), rank(nextUint()), key(0) {}
 
-Node::Node() : lc(null), rc(null), size(0) {}
-
-inline void Node::maintain() { size = lc->size + rc->size + 1; }
+Node::Node(int key) : lc(null), rc(null), size(1), rank(nextUint()), key(key) {}
 
 inline Node *merge(Node *u, Node *v) {
     if (u == null) return v;
     if (v == null) return u;
-    u->lc = merge(u->lc, v->lc);
-    u->rc = merge(u->rc, v->rc);
-    u->size += v->size, delete v;
-    return u;
-}
-
-inline void split(Node *p, Node *&u, int k) {
-    u = new Node();
-    if (k > p->lc->size)
-        split(p->rc, u->rc, k - p->lc->size);
+    if (u->rank < v->rank)
+        return u->rc = merge(u->rc, v), u->maintain(), u;
     else
-        std::swap(p->rc, u->rc);
-    if (k < p->lc->size) split(p->lc, u->lc, k);
-    u->size = p->size - k, p->size = k;
+        return v->lc = merge(u, v->lc), v->maintain(), v;
 }
 
-inline int query(Node *p, int l, int r, int k) {
-    if (l == r) return l;
-    register int mid = l + r >> 1;
-    return p->lc->size < k ? query(p->rc, mid + 1, r, k - p->lc->size)
-                           : query(p->lc, l, mid, k);
+typedef std::pair<Node *, Node *> Pair;
+
+inline int query(Node *p, int k) {
+    for (; p != null;) {
+        if (p->lc->size + 1 == k)
+            return p->key;
+        else if (p->lc->size >= k)
+            p = p->lc;
+        else
+            k -= p->lc->size + 1, p = p->rc;
+    }
 }
 
-inline void insert(Node *&p, int l, int r, int v) {
-    p = new Node();
-    p->size = 1;
-    if (l == r) return;
-    register int mid = l + r >> 1;
-    v <= mid ? insert(p->lc, l, mid, v) : insert(p->rc, mid + 1, r, v);
+inline Pair split(Node *u, int v) {
+    if (u == null) return Pair(null, null);
+    Pair t;
+    if (u->key < v) {
+        t = split(u->rc, v);
+        u->rc = t.first, t.first = u;
+    } else {
+        t = split(u->lc, v);
+        u->lc = t.second, t.second = u;
+    }
+    u->maintain();
+    return t;
+}
+
+inline Node *fingerSearch(Node *u, Node *v) {
+    if (u == null) return v;
+    if (v == null) return u;
+    if (u->rank > v->rank) std::swap(u, v);
+    Pair t = split(v, u->key);
+    u->lc = fingerSearch(u->lc, t.first);
+    u->rc = fingerSearch(u->rc, t.second);
+    u->maintain();
+    return u;
 }
 
 bool type[MAXN + 1];
@@ -168,41 +183,53 @@ std::set<int> s;
 inline void split(int x, int pos) {
     if (pos >= end[x] || pos < x) return;
     if (!type[x]) {
-        split(root[x], root[pos + 1], pos - x + 1);
+        Pair t = split(root[x], query(root[x], pos - x + 1) + 1);
+        root[x] = t.first, root[pos + 1] = t.second;
     } else {
         root[pos + 1] = root[x];
-        split(root[pos + 1], root[x], end[x] - pos);
+        Pair t = split(root[pos + 1], query(root[pos + 1], end[x] - pos) + 1);
+        root[pos + 1] = t.first, root[x] = t.second;
     }
     end[pos + 1] = end[x], end[x] = pos;
     s.insert(pos + 1), type[pos + 1] = type[x];
 }
+
 int n, q;
 
 inline void merge(int a, int b) {
     if (a == b) return;
     s.erase(b);
-    root[a] = merge(root[a], root[b]);
+    root[a] = fingerSearch(root[a], root[b]);
     end[a] = end[b];
 }
 
 inline int query(int x, int k) {
     k -= x - 1;
     if (!type[x])
-        return query(root[x], 1, n, k);
+        return query(root[x], k);
     else
-        return query(root[x], 1, n, end[x] - x + 2 - k);
+        return query(root[x], end[x] - x + 2 - k);
 }
 
 int a[MAXN + 1];
+
+std::vector<int> test(int a) {
+    std::vector<int> t;
+    for (register int i = 1; i <= root[a]->size; i++) {
+        t.push_back(query(root[a], i));
+    }
+    return t;
+}
 
 inline void solve() {
     io >> n >> q;
     for (int i = 1; i <= n; i++) {
         io >> a[i];
-        insert(root[i], 1, n, a[i]);
+        root[i] = new Node(a[i]);
         s.insert(s.end(), i);
         end[i] = i;
     }
+
     static int tmp[MAXN], cnt = 0;
     for (register int cmd, l, r; q--;) {
         io >> cmd >> l >> r;
