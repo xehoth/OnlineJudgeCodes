@@ -163,7 +163,6 @@ struct AhoCrasickAutomation {
     inline long solve(long x) {
         register int len = 0;
         for (; x; x /= 10) digit[++len] = x % 10;
-        memset(f, -1, sizeof(f));
         return dfs(len, root, 0, 1);
     }
 
@@ -173,6 +172,7 @@ struct AhoCrasickAutomation {
         static char buf[20];
         for (register int i = 0; i < n; i++) io >> buf, insert(buf);
         build();
+        memset(f, -1, sizeof(f));
         k += solve(l - 1);
         if (solve(r) < k) {
             io << "no such number";
