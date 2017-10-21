@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2017, xehoth
  * All rights reserved.
- * 「UVA 1291」Strategic game 21-10-2017
+ * 「UVA 1292」Strategic game 21-10-2017
  * 树形 DP
  * @author xehoth
  */
