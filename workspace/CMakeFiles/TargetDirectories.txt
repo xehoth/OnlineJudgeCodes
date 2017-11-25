@@ -1,0 +1,3 @@
+/home/xehoth/桌面/workspace/CMakeFiles/rebuild_cache.dir
+/home/xehoth/桌面/workspace/CMakeFiles/edit_cache.dir
+/home/xehoth/桌面/workspace/CMakeFiles/main.dir

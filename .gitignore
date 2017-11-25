@@ -1,0 +1,11 @@
+workspace/main
+workspace/log
+workspace/std
+workspace/sample/std.out
+workspace/sample/out.out
+workspace/test/std
+workspace/test/me
+workspace/test/in.in
+workspace/test/out.out
+workspace/test/std.out
+workspace/test/data
