@@ -1,4 +1,4 @@
-# Install script for directory: /home/xehoth/Desktop/workspace
+# Install script for directory: /media/xehoth/新加卷/oi/xehoth/OI/OnlineJudgeCodes/workspace
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/xehoth/桌面/workspace/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/media/xehoth/新加卷/oi/xehoth/OI/OnlineJudgeCodes/workspace/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
