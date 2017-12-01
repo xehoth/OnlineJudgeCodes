@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) 2017, xehoth
+ * All rights reserved.
+ * 「BZOJ 4025」二分图 01-12-2017
+ * LCT
+ * @author xehoth
+ */
 #include <bits/stdc++.h>
 
 namespace {
