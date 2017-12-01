@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) 2017, xehoth
+ * All rights reserved.
+ * 「hihoCoder 1236」Scores 01-12-2017
+ * 分块 + bitset
+ * @author xehoth
+ */
 #include <bits/stdc++.h>
 
 namespace {
