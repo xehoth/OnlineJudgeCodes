@@ -34,7 +34,7 @@
 
 #define DBG
 #ifdef OPT
-#pragma GCC optimize("O3")
+#pragma GCC optimize("Ofast")
 #endif
 
 #ifdef ONLINE_JUDGE
@@ -215,8 +215,8 @@
 // endtr2
 
 #ifdef OPT
-#define inline inline __attribute__((optimize("O3"))) __attribute__(( \
-    __always_inline__, __gnu_inline__, __artificial__)) __fastcall
+#define inline inline __attribute__((optimize("Ofast"))) __attribute__( \
+    (__always_inline__, __gnu_inline__, __artificial__)) __fastcall
 #define assembly __as##m__ __volatile__
 #endif
 
