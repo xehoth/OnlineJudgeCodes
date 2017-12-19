@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2017, xehoth
  * All rights reserved.
- * 「BZOJ 1396」识别子串 19-12-2017
+ * 「BZOJ 2865」识别子串 19-12-2017
  * 后缀数组 + 单调队列
  * @author xehoth
  */
@@ -40,7 +40,7 @@ struct OutputStream {
     }
 } io;
 
-const int MAXN = 100000 + 9;
+const int MAXN = 500000 + 9;
 
 inline bool islms(const int i, const bool *t) {
     return i > 0 && t[i] && !t[i - 1];

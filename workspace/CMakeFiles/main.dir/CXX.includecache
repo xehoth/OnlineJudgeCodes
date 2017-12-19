@@ -9,8 +9,4 @@
 /media/xehoth/新加卷/oi/xehoth/OI/OnlineJudgeCodes/workspace/src/main.cpp
 bits/stdc++.h
 -
-ext/pb_ds/assoc_container.hpp
--
-ext/pb_ds/hash_policy.hpp
--
 
