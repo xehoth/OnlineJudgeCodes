@@ -1,16 +1,33 @@
 #include <bits/stdc++.h>
-
-const int MOD = 1000000000;
-
+int a[100010];
 int main() {
-    char *t = new char;
-    srand(time(0) + (long long)t);
-    delete t;
-    register int n, m;
-    n = rand() % MOD + 1, m = rand() % MOD + 1;
-    while (std::__gcd(n, m) != 1) {
-        n = rand() % MOD + 1, m = rand() % MOD + 1;
+    register int n = 100000, q = 100000;
+    std::cout << n << '\n';
+    for (register int i = 1; i <= n; i++) {
+        a[i] = i;
     }
-    std::cout << n << ' ' << m << '\n';
-    return 0;
+    std::random_shuffle(a + 1, a + n + 1);
+    for (register int i = 1; i < n; i++) {
+        std::cout << a[i] << ' ';
+    }
+    std::cout << a[n] << '\n';
+    std::cout << q << '\n';
+    q /= 4;
+    register int l[2] = {1, n / 2}, r[2] = {n / 2, n};
+    const int LIMIT = (INT_MAX / n - 1) / 2;
+    for (register int i = 1; i <= q; i++) {
+        if (l[0] > r[0]) std::swap(l[0], r[0]);
+        std::cout << "3 " << (l[0]++) << ' ' << (r[0]--) << '\n';
+        if (l[1] > r[1]) std::swap(l[1], r[1]);
+        std::cout << "5 " << (l[1]++) << ' ' << (r[1]--) << ' '
+                  << i * 1234ll % LIMIT << '\n';
+        register int s = i + n / 2, t = n * 3 / 4 - i;
+        if (s > t) std::swap(s, t);
+        std::cout << "9 " << s << ' ' << t << ' '
+                  << i * 123456ll % (INT_MAX / 2) << '\n';
+    }
+    for (register int i = 1; i <= q; i++) {
+        std::cout << "9 " << i << ' ' << n - i + 1 << ' '
+                  << i * 123456ll % (INT_MAX / 2) << '\n';
+    }
 }
