@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) 2017, xehoth
+ * All rights reserved.
+ * 「BZOJ 4327」玄武密码 19-12-2017
+ * 后缀自动机
+ * @author xehoth
+ */
 #include <bits/stdc++.h>
 
 namespace {
