@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) 2017, xehoth
+ * All rights reserved.
+ * 「BZOJ 4009」接水果 27-12-2017
+ * 树套树
+ * @author xehoth
+ */
 #include <bits/stdc++.h>
 
 namespace {
