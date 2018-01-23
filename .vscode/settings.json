@@ -85,7 +85,9 @@
         "iterator": "cpp",
         "ccomplex": "cpp",
         "ciso646": "cpp",
-        "cerrno": "cpp"
+        "cerrno": "cpp",
+        "decimal": "cpp",
+        "cfloat": "cpp"
     },
     "python.pythonPath": "/usr/bin/python"
 }

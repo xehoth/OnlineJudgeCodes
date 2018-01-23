@@ -5,7 +5,7 @@
         "-g",
         "${file}",
         "-o",
-        "${fileBasenameNoExtension}",
+        "workspace/${fileBasenameNoExtension}",
         "-DDBG -Wall",
         "-std=c++11"
     ], // 编译命令参数
