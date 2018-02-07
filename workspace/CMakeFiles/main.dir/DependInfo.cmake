@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/media/xehoth/新加卷/oi/xehoth/OI/OnlineJudgeCodes/workspace/src/main.cpp" "/media/xehoth/新加卷/oi/xehoth/OI/OnlineJudgeCodes/workspace/CMakeFiles/main.dir/src/main.cpp.o"
+  "/media/xehoth/F/oi/xehoth/OI/OnlineJudgeCodes/workspace/src/main.cpp" "/media/xehoth/F/oi/xehoth/OI/OnlineJudgeCodes/workspace/CMakeFiles/main.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
