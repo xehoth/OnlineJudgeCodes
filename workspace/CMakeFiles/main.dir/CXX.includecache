@@ -7,8 +7,6 @@
 #IncludeRegexTransform: 
 
 /media/xehoth/F/oi/xehoth/OI/OnlineJudgeCodes/workspace/src/main.cpp
-iostream
--
-vector
+bits/stdc++.h
 -
 
