@@ -10,3 +10,6 @@ workspace/test/out.out
 workspace/test/std.out
 workspace/test/data
 workspace/src/std.cpp
+workspace/sample/*.in
+workspace/sample/*.out
+workspace/sample/*.ans
