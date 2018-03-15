@@ -89,6 +89,5 @@
         "decimal": "cpp",
         "cfloat": "cpp",
         "list": "cpp"
-    },
-    "python.pythonPath": "/usr/bin/python"
+    }
 }
