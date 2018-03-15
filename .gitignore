@@ -13,3 +13,6 @@ workspace/src/std.cpp
 workspace/sample/*.in
 workspace/sample/*.out
 workspace/sample/*.ans
+workspace/src/cc
+workspace/src/template.cpp
+workspace/src/xehoth.cpp

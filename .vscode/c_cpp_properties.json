@@ -64,12 +64,18 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceRoot}",
-                "E:/program/Microsoft Visual Studio/VC/Tools/MSVC/14.10.25017/include/*",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.15063.0/um",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.15063.0/ucrt",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.15063.0/shared",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.15063.0/winrt",
-                "E:/program/devcpp_setup/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include"
+                "F:\\tools\\devcpp_setup\\MinGW64\\lib\\gcc\\x86_64-w64-mingw32\\4.8.1\\include",
+                "C:\\Users\\82454\\AppData\\Local\\Packages\\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\\LocalState\\rootfs\\usr\\include\\c++\\5",
+                "F:/tools/devcpp_setup/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/c++/x86_64-w64-mingw32",
+                "C:/Users/82454/AppData/Local/Packages/CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc/LocalState/rootfs/usr/include/c++/5/tr1",
+                "F:/tools/devcpp_setup/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/ssp",
+                "F:/tools/devcpp_setup/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/ssp",
+                "F:/tools/devcpp_setup/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/ssp",
+                "F:/tools/devcpp_setup/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/ssp",
+                "F:/tools/devcpp_setup/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/ssp",
+                "F:/tools/devcpp_setup/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/ssp",
+                "F:/tools/devcpp_setup/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/ssp",
+                "F:/tools/devcpp_setup/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/ssp"
             ],
             "defines": [
                 "_DEBUG",
@@ -78,13 +84,9 @@
             ],
             "browse": {
                 "path": [
-                    "E:/program/Microsoft Visual Studio/VC/Tools/MSVC/14.10.25017/include/*",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.15063.0/um",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.15063.0/ucrt",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.15063.0/shared",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.15063.0/winrt",
-                    "E:/program/devcpp_setup/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include",
-                    "${workspaceRoot}"
+                    "${workspaceRoot}",
+                    "F:\\tools\\devcpp_setup\\MinGW64\\lib\\gcc\\x86_64-w64-mingw32\\4.8.1\\include",
+                    "C:\\Users\\82454\\AppData\\Local\\Packages\\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\\LocalState\\rootfs\\usr\\include\\c++\\5"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""

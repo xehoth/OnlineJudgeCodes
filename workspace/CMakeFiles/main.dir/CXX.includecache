@@ -7,6 +7,12 @@
 #IncludeRegexTransform: 
 
 /media/xehoth/F/oi/xehoth/OI/OnlineJudgeCodes/workspace/src/main.cpp
-bits/stdc++.h
+algorithm
+-
+cstring
+-
+iostream
+-
+vector
 -
 
