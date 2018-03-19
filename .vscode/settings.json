@@ -88,6 +88,7 @@
         "cerrno": "cpp",
         "decimal": "cpp",
         "cfloat": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "hash_map": "cpp"
     }
 }
