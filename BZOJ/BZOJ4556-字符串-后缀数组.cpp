@@ -16,7 +16,6 @@
  * 后缀数组
  * @author xehoth
  */
-
 #include <algorithm>
 #include <climits>
 #include <cstdio>
