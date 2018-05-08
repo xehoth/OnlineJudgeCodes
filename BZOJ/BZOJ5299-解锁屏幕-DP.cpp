@@ -18,7 +18,7 @@
  */
 #include <bits/stdc++.h>
 
-const int MAXN = 20;
+const int MAXN = 19;
 const int MOD = 100000007;
 
 int n, map[MAXN][MAXN];
@@ -105,8 +105,6 @@ int main() {
                     f[i | 131072][17] += f[i][j];
                 if (!(i & 262144) && (i & map[j][18]) == map[j][18])
                     f[i | 262144][18] += f[i][j];
-                if (!(i & 524288) && (i & map[j][19]) == map[j][19])
-                    f[i | 524288][19] += f[i][j];
             }
         }
     }
