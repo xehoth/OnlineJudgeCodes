@@ -19,7 +19,7 @@
 #include <bits/stdc++.h>
 
 const int MOD = 1e9 + 7;
-typedef unsigned long long H;
+typedef unsigned int H;
 const int HASH_BASE = 31;
 const int MAXN = 10000;
 
@@ -33,11 +33,8 @@ int f[2][MAXN + 1];
 inline H get(int l, int r) { return h[r] - h[l - 1] * powVal[r - l + 1]; }
 
 int main() {
-    std::ios::sync_with_stdio(false);
-    std::cin.tie(NULL);
-    std::cout.tie(NULL);
     powVal[0] = 1;
-    std::cin >> K >> (s + 1);
+    scanf("%d\n%s", &K, s + 1);
     n = strlen(s + 1);
     for (int i = 1; i <= n; i++) powVal[i] = (H)powVal[i - 1] * HASH_BASE;
     for (int i = 1; i <= n; i++) h[i] = h[i - 1] * HASH_BASE + s[i];
@@ -47,7 +44,7 @@ int main() {
         std::cin >> k;
         H hv;
         for (int len; k--;) {
-            std::cin >> (s + 1);
+            scanf("%s", s + 1);
             len = strlen(s + 1);
             hv = 0;
             for (int i = 1; i <= len; i++) hv = hv * HASH_BASE + s[i];
@@ -61,6 +58,6 @@ int main() {
     }
     int ans = 0;
     for (int i = 1; i <= n; i++) ans = add(ans, f[end][i]);
-    std::cout << ans;
+    printf("%d", ans);
     return 0;
 }
