@@ -1,3 +1,0 @@
-/media/xehoth/F/oi/xehoth/OI/OnlineJudgeCodes/workspace/CMakeFiles/edit_cache.dir
-/media/xehoth/F/oi/xehoth/OI/OnlineJudgeCodes/workspace/CMakeFiles/main.dir
-/media/xehoth/F/oi/xehoth/OI/OnlineJudgeCodes/workspace/CMakeFiles/rebuild_cache.dir

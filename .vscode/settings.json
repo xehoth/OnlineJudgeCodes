@@ -89,6 +89,15 @@
         "decimal": "cpp",
         "cfloat": "cpp",
         "list": "cpp",
-        "hash_map": "cpp"
-    }
+        "hash_map": "cpp",
+        "regex": "cpp",
+        "shared_mutex": "cpp",
+        "codecvt": "cpp",
+        "xhash": "cpp",
+        "resumable": "cpp",
+        "optional": "cpp",
+        "string_view": "cpp"
+    },
+    "C_Cpp.clang_format_style": "file",
+    "C_Cpp.clang_format_fallbackStyle": null
 }
