@@ -1,0 +1,8 @@
+BasedOnStyle: Google
+IndentWidth: 4
+Language: Cpp
+ColumnLimit: 100
+UseTab: Never
+NamespaceIndentation: All
+PointerAlignment: Right
+SortIncludes: false
